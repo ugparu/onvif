@@ -59,20 +59,20 @@ type FloatRange struct {
 
 type OSDConfiguration struct {
 	DeviceEntity                  `xml:"token,attr"`
-	VideoSourceConfigurationToken OSDReference              `xml:"tt:VideoSourceConfigurationToken"`
-	Type                          OSDType                   `xml:"tt:Type"`
-	Position                      OSDPosConfiguration       `xml:"tt:Position"`
-	TextString                    OSDTextConfiguration      `xml:"tt:TextString"`
-	Image                         OSDImgConfiguration       `xml:"tt:Image"`
-	Extension                     OSDConfigurationExtension `xml:"tt:Extension"`
+	VideoSourceConfigurationToken OSDReference              `xml:"tt:VideoSourceConfigurationToken" xmlu:"VideoSourceConfigurationToken"`
+	Type                          OSDType                   `xml:"tt:Type" xmlu:"Type"`
+	Position                      OSDPosConfiguration       `xml:"tt:Position" xmlu:"Position"`
+	TextString                    OSDTextConfiguration      `xml:"tt:TextString" xmlu:"TextString"`
+	Image                         OSDImgConfiguration       `xml:"tt:Image" xmlu:"Image"`
+	Extension                     OSDConfigurationExtension `xml:"tt:Extension" xmlu:"Extension"`
 }
 
 type OSDType xsd.String
 
 type OSDPosConfiguration struct {
-	Type      string                       `xml:"tt:Type"`
-	Pos       Vector                       `xml:"tt:Pos"`
-	Extension OSDPosConfigurationExtension `xml:"tt:Extension"`
+	Type      string                       `xml:"tt:Type" xmlu:"Type"`
+	Pos       Vector                       `xml:"tt:Pos" xmlu:"Pos"`
+	Extension OSDPosConfigurationExtension `xml:"tt:Extension" xmlu:"Extension"`
 }
 
 type Vector struct {
@@ -87,20 +87,20 @@ type OSDReference ReferenceToken
 type OSDTextConfiguration struct {
 	IsPersistentText xsd.Boolean `xml:"IsPersistentText,attr"`
 
-	Type            xsd.String                    `xml:"tt:Type"`
-	DateFormat      xsd.String                    `xml:"tt:DateFormat"`
-	TimeFormat      xsd.String                    `xml:"tt:TimeFormat"`
-	FontSize        xsd.Int                       `xml:"tt:FontSize"`
-	FontColor       OSDColor                      `xml:"tt:FontColor"`
-	BackgroundColor OSDColor                      `xml:"tt:BackgroundColor"`
-	PlainText       xsd.String                    `xml:"tt:PlainText"`
-	Extension       OSDTextConfigurationExtension `xml:"tt:Extension"`
+	Type            xsd.String                    `xml:"tt:Type" xmlu:"Type"`
+	DateFormat      xsd.String                    `xml:"tt:DateFormat" xmlu:"DateFormat"`
+	TimeFormat      xsd.String                    `xml:"tt:TimeFormat" xmlu:"TimeFormat"`
+	FontSize        xsd.Int                       `xml:"tt:FontSize" xmlu:"FontSize"`
+	FontColor       OSDColor                      `xml:"tt:FontColor" xmlu:"FontColor"`
+	BackgroundColor OSDColor                      `xml:"tt:BackgroundColor" xmlu:"BackgroundColor"`
+	PlainText       xsd.String                    `xml:"tt:PlainText" xmlu:"PlainText"`
+	Extension       OSDTextConfigurationExtension `xml:"tt:Extension" xmlu:"Extension"`
 }
 
 type OSDColor struct {
 	Transparent int `xml:"Transparent,attr"`
 
-	Color Color `xml:"tt:Color"`
+	Color Color `xml:"tt:Color" xmlu:"Color"`
 }
 
 type Color struct {
@@ -113,8 +113,8 @@ type Color struct {
 type OSDTextConfigurationExtension xsd.AnyType
 
 type OSDImgConfiguration struct {
-	ImgPath   xsd.AnyURI                   `xml:"tt:ImgPath"`
-	Extension OSDImgConfigurationExtension `xml:"tt:Extension"`
+	ImgPath   xsd.AnyURI                   `xml:"tt:ImgPath" xmlu:"ImgPath"`
+	Extension OSDImgConfigurationExtension `xml:"tt:Extension" xmlu:"Extension"`
 }
 
 type OSDImgConfigurationExtension xsd.AnyType
