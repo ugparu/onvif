@@ -37,7 +37,7 @@ func CallToOnvif(c *gin.Context) {
 	}
 
 	fmt.Println(string(acceptedData))
-	message, err := callNecessaryMethod(serviceName, methodName, string(acceptedData), username, pass, xaddr, endpoint)
+	message, err := CallNecessaryMethod(serviceName, methodName, string(acceptedData), username, pass, xaddr, endpoint)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
 	} else {
@@ -55,7 +55,7 @@ func CallToOnvif(c *gin.Context) {
 	}
 }
 
-func callNecessaryMethod(serviceName, methodName, acceptedData, username, password, xaddr, endpoint string) (string, error) {
+func CallNecessaryMethod(serviceName, methodName, acceptedData, username, password, xaddr, endpoint string) (string, error) {
 	var methodStruct interface{}
 	var err error
 
