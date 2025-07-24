@@ -17,7 +17,6 @@ func ReadAndParse(ctx context.Context, httpReply *http.Response, reply interface
 	if b, err := ioutil.ReadAll(httpReply.Body); err != nil {
 		return errors.Annotate(err, "read")
 	} else {
-		fmt.Println(string(b))
 		err = xmlu.Unmarshal(b, reply)
 		return errors.Annotate(err, "decode")
 	}

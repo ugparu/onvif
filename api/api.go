@@ -36,7 +36,6 @@ func CallToOnvif(c *gin.Context) {
 		fmt.Printf("Failed to get rawx data: %s", err)
 	}
 
-	fmt.Println(string(acceptedData))
 	message, err := CallNecessaryMethod(serviceName, methodName, string(acceptedData), username, pass, xaddr, endpoint)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, err.Error())
@@ -103,8 +102,6 @@ func CallNecessaryMethod(serviceName, methodName, acceptedData, username, passwo
 	if err != nil {
 		return "", errors.Annotate(err, "ReadAll")
 	}
-
-	fmt.Println(string(rsp))
 
 	servResp.Body.Close()
 
@@ -213,9 +210,6 @@ func xmlMaker(lst *[]interface{}, tags *[]map[string]string, lstIndex int) (stri
 	for tgIndx, tg := range *tags {
 		if tgIndx == lstIndex {
 			for index, elem := range *lst {
-				fmt.Println(tg)
-				fmt.Println(elem)
-				fmt.Println("====")
 				if reflect.TypeOf(elem).String() == "[]etree.Attr" {
 					conversion := elem.([]etree.Attr)
 					for _, i := range conversion {
