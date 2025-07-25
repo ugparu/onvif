@@ -745,13 +745,13 @@ type VideoEncoderConfigurationOptions struct {
 }
 
 type JpegOptions struct {
-	ResolutionsAvailable  VideoResolution
+	ResolutionsAvailable  []VideoResolution
 	FrameRateRange        IntRange
 	EncodingIntervalRange IntRange
 }
 
 type Mpeg4Options struct {
-	ResolutionsAvailable   VideoResolution
+	ResolutionsAvailable   []VideoResolution
 	GovLengthRange         IntRange
 	FrameRateRange         IntRange
 	EncodingIntervalRange  IntRange
@@ -759,7 +759,7 @@ type Mpeg4Options struct {
 }
 
 type H264Options struct {
-	ResolutionsAvailable  VideoResolution
+	ResolutionsAvailable  []VideoResolution
 	GovLengthRange        IntRange
 	FrameRateRange        IntRange
 	EncodingIntervalRange IntRange
