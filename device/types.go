@@ -469,12 +469,12 @@ type GetNetworkProtocols struct {
 }
 
 type GetNetworkProtocolsResponse struct {
-	NetworkProtocols onvif.NetworkProtocol
+	NetworkProtocols []onvif.NetworkProtocol
 }
 
 type SetNetworkProtocols struct {
-	XMLName          string                `xml:"tds:SetNetworkProtocols"`
-	NetworkProtocols onvif.NetworkProtocol `xml:"tds:NetworkProtocols"`
+	XMLName          string                  `xml:"tds:SetNetworkProtocols"`
+	NetworkProtocols []onvif.NetworkProtocol `xml:"tds:NetworkProtocols"`
 }
 
 type SetNetworkProtocolsResponse struct {
