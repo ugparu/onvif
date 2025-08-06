@@ -436,8 +436,8 @@ type VideoEncoderConfiguration struct {
 	Resolution     VideoResolution        `xml:"tt:Resolution" xmlu:"Resolution"`
 	Quality        float64                `xml:"tt:Quality" xmlu:"Quality"`
 	RateControl    VideoRateControl       `xml:"tt:RateControl" xmlu:"RateControl"`
-	MPEG4          Mpeg4Configuration     `xml:"tt:MPEG4" xmlu:"MPEG4"`
-	H264           H264Configuration      `xml:"tt:H264" xmlu:"H264"`
+	MPEG4          Mpeg4Configuration     `xml:"tt:MPEG4,omitempty" xmlu:"MPEG4,omitempty"`
+	H264           H264Configuration      `xml:"tt:H264,omitempty" xmlu:"H264,omitempty"`
 	Multicast      MulticastConfiguration `xml:"tt:Multicast" xmlu:"Multicast"`
 	SessionTimeout xsd.Duration           `xml:"tt:SessionTimeout" xmlu:"SessionTimeout"`
 }
@@ -469,8 +469,8 @@ type VideoRateControlClean struct {
 }
 
 type Mpeg4Configuration struct {
-	GovLength    xsd.Int      `xml:"tt:GovLength" xmlu:"GovLength"`
-	Mpeg4Profile Mpeg4Profile `xml:"tt:Mpeg4Profile" xmlu:"Mpeg4Profile"`
+	GovLength    xsd.Int      `xml:"tt:GovLength,omitempty" xmlu:"GovLength,omitempty"`
+	Mpeg4Profile Mpeg4Profile `xml:"tt:Mpeg4Profile,omitempty" xmlu:"Mpeg4Profile,omitempty"`
 }
 
 type Mpeg4ConfigurationClean struct {
@@ -481,8 +481,8 @@ type Mpeg4ConfigurationClean struct {
 type Mpeg4Profile xsd.String
 
 type H264Configuration struct {
-	GovLength   xsd.Int     `xml:"tt:GovLength" xmlu:"GovLength"`
-	H264Profile H264Profile `xml:"tt:H264Profile" xmlu:"H264Profile"`
+	GovLength   xsd.Int     `xml:"tt:GovLength,omitempty" xmlu:"GovLength,omitempty"`
+	H264Profile H264Profile `xml:"tt:H264Profile,omitempty" xmlu:"H264Profile,omitempty"`
 }
 
 type H264ConfigurationClean struct {
