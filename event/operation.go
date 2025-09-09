@@ -61,7 +61,6 @@ type CreatePullPointSubscription struct {
 	XMLName                string                     `xml:"tev:CreatePullPointSubscription"`
 	Filter                 FilterType                 `xml:"tev:Filter"`
 	InitialTerminationTime AbsoluteOrRelativeTimeType `xml:"tev:InitialTerminationTime"`
-	SubscriptionPolicy     SubscriptionPolicy         `xml:"tev:SubscriptionPolicy"`
 }
 
 // CreatePullPointSubscriptionResponse action
