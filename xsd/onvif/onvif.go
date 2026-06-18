@@ -220,37 +220,37 @@ type VideoSourceExtension struct {
 }
 
 type ImagingSettings20 struct {
-	BacklightCompensation *BacklightCompensation20    `xml:"tt:BacklightCompensation"`
-	Brightness            float64                     `xml:"tt:Brightness,omitempty"`
-	ColorSaturation       float64                     `xml:"tt:ColorSaturation,omitempty"`
-	Contrast              float64                     `xml:"tt:Contrast,omitempty"`
-	Exposure              *Exposure20                 `xml:"tt:Exposure"`
-	Focus                 *FocusConfiguration20       `xml:"tt:Focus"`
-	IrCutFilter           *IrCutFilterMode            `xml:"tt:IrCutFilter"`
-	Sharpness             float64                     `xml:"tt:Sharpness,omitempty"`
-	WideDynamicRange      *WideDynamicRange20         `xml:"tt:WideDynamicRange"`
-	WhiteBalance          *WhiteBalance20             `xml:"tt:WhiteBalance"`
-	Extension             *ImagingSettingsExtension20 `xml:"tt:Extension"`
+	BacklightCompensation *BacklightCompensation20    `xml:"tt:BacklightCompensation" xmlu:"BacklightCompensation"`
+	Brightness            float64                     `xml:"tt:Brightness,omitempty" xmlu:"Brightness"`
+	ColorSaturation       float64                     `xml:"tt:ColorSaturation,omitempty" xmlu:"ColorSaturation"`
+	Contrast              float64                     `xml:"tt:Contrast,omitempty" xmlu:"Contrast"`
+	Exposure              *Exposure20                 `xml:"tt:Exposure" xmlu:"Exposure"`
+	Focus                 *FocusConfiguration20       `xml:"tt:Focus" xmlu:"Focus"`
+	IrCutFilter           *IrCutFilterMode            `xml:"tt:IrCutFilter" xmlu:"IrCutFilter"`
+	Sharpness             float64                     `xml:"tt:Sharpness,omitempty" xmlu:"Sharpness"`
+	WideDynamicRange      *WideDynamicRange20         `xml:"tt:WideDynamicRange" xmlu:"WideDynamicRange"`
+	WhiteBalance          *WhiteBalance20             `xml:"tt:WhiteBalance" xmlu:"WhiteBalance"`
+	Extension             *ImagingSettingsExtension20 `xml:"tt:Extension" xmlu:"Extension"`
 }
 
 type BacklightCompensation20 struct {
-	Mode  BacklightCompensationMode `xml:"tt:Mode"`
-	Level float64                   `xml:"tt:Level"`
+	Mode  BacklightCompensationMode `xml:"tt:Mode" xmlu:"Mode"`
+	Level float64                   `xml:"tt:Level" xmlu:"Level"`
 }
 
 type Exposure20 struct {
-	Mode            ExposureMode     `xml:"tt:Mode,omitempty"`
-	Priority        ExposurePriority `xml:"tt:Priority,omitempty"`
-	Window          Rectangle        `xml:"tt:Window,omitempty"`
-	MinExposureTime float64          `xml:"tt:MinExposureTime,omitempty"`
-	MaxExposureTime float64          `xml:"tt:MaxExposureTime,omitempty"`
-	MinGain         float64          `xml:"tt:MinGain,omitempty"`
-	MaxGain         float64          `xml:"tt:MaxGain,omitempty"`
-	MinIris         float64          `xml:"tt:MinIris,omitempty"`
-	MaxIris         float64          `xml:"tt:MaxIris,omitempty"`
-	ExposureTime    float64          `xml:"tt:ExposureTime,omitempty"`
-	Gain            float64          `xml:"tt:Gain,omitempty"`
-	Iris            float64          `xml:"tt:Iris,omitempty"`
+	Mode            ExposureMode     `xml:"tt:Mode,omitempty" xmlu:"Mode"`
+	Priority        ExposurePriority `xml:"tt:Priority,omitempty" xmlu:"Priority"`
+	Window          Rectangle        `xml:"tt:Window,omitempty" xmlu:"Window"`
+	MinExposureTime float64          `xml:"tt:MinExposureTime,omitempty" xmlu:"MinExposureTime"`
+	MaxExposureTime float64          `xml:"tt:MaxExposureTime,omitempty" xmlu:"MaxExposureTime"`
+	MinGain         float64          `xml:"tt:MinGain,omitempty" xmlu:"MinGain"`
+	MaxGain         float64          `xml:"tt:MaxGain,omitempty" xmlu:"MaxGain"`
+	MinIris         float64          `xml:"tt:MinIris,omitempty" xmlu:"MinIris"`
+	MaxIris         float64          `xml:"tt:MaxIris,omitempty" xmlu:"MaxIris"`
+	ExposureTime    float64          `xml:"tt:ExposureTime,omitempty" xmlu:"ExposureTime"`
+	Gain            float64          `xml:"tt:Gain,omitempty" xmlu:"Gain"`
+	Iris            float64          `xml:"tt:Iris,omitempty" xmlu:"Iris"`
 }
 
 type FocusConfiguration20 struct {
@@ -264,22 +264,22 @@ type FocusConfiguration20 struct {
 type FocusConfiguration20Extension xsd.AnyType
 
 type WideDynamicRange20 struct {
-	Mode  WideDynamicMode `xml:"tt:Mode"`
-	Level float64         `xml:"tt:Level"`
+	Mode  WideDynamicMode `xml:"tt:Mode" xmlu:"Mode"`
+	Level float64         `xml:"tt:Level" xmlu:"Level"`
 }
 
 type WhiteBalance20 struct {
-	Mode      WhiteBalanceMode        `xml:"tt:Mode"`
-	CrGain    float64                 `xml:"tt:CrGain"`
-	CbGain    float64                 `xml:"tt:CbGain"`
-	Extension WhiteBalance20Extension `xml:"tt:Extension"`
+	Mode      WhiteBalanceMode        `xml:"tt:Mode" xmlu:"Mode"`
+	CrGain    float64                 `xml:"tt:CrGain" xmlu:"CrGain"`
+	CbGain    float64                 `xml:"tt:CbGain" xmlu:"CbGain"`
+	Extension WhiteBalance20Extension `xml:"tt:Extension" xmlu:"Extension"`
 }
 
 type WhiteBalance20Extension xsd.AnyType
 
 type ImagingSettingsExtension20 struct {
-	ImageStabilization ImageStabilization          `xml:"tt:ImageStabilization"`
-	Extension          ImagingSettingsExtension202 `xml:"tt:Extension"`
+	ImageStabilization ImageStabilization          `xml:"tt:ImageStabilization" xmlu:"ImageStabilization"`
+	Extension          ImagingSettingsExtension202 `xml:"tt:Extension" xmlu:"Extension"`
 }
 
 type ImageStabilization struct {
@@ -293,8 +293,8 @@ type ImageStabilizationMode xsd.String
 type ImageStabilizationExtension xsd.AnyType
 
 type ImagingSettingsExtension202 struct {
-	IrCutFilterAutoAdjustment IrCutFilterAutoAdjustment   `xml:"tt:IrCutFilterAutoAdjustment"`
-	Extension                 ImagingSettingsExtension203 `xml:"tt:Extension"`
+	IrCutFilterAutoAdjustment IrCutFilterAutoAdjustment   `xml:"tt:IrCutFilterAutoAdjustment" xmlu:"IrCutFilterAutoAdjustment"`
+	Extension                 ImagingSettingsExtension203 `xml:"tt:Extension" xmlu:"Extension"`
 }
 
 type IrCutFilterAutoAdjustment struct {
@@ -307,10 +307,10 @@ type IrCutFilterAutoAdjustment struct {
 type IrCutFilterAutoAdjustmentExtension xsd.AnyType
 
 type ImagingSettingsExtension203 struct {
-	ToneCompensation ToneCompensation            `xml:"tt:ToneCompensation"`
-	Defogging        Defogging                   `xml:"tt:Defogging"`
-	NoiseReduction   NoiseReduction              `xml:"tt:NoiseReduction"`
-	Extension        ImagingSettingsExtension204 `xml:"tt:Extension"`
+	ToneCompensation ToneCompensation            `xml:"tt:ToneCompensation" xmlu:"ToneCompensation"`
+	Defogging        Defogging                   `xml:"tt:Defogging" xmlu:"Defogging"`
+	NoiseReduction   NoiseReduction              `xml:"tt:NoiseReduction" xmlu:"NoiseReduction"`
+	Extension        ImagingSettingsExtension204 `xml:"tt:Extension" xmlu:"Extension"`
 }
 
 type ToneCompensation struct {
@@ -322,9 +322,9 @@ type ToneCompensation struct {
 type ToneCompensationExtension xsd.AnyType
 
 type Defogging struct {
-	Mode      string
-	Level     float64
-	Extension DefoggingExtension
+	Mode      string             `xmlu:"Mode"`
+	Level     float64            `xmlu:"Level"`
+	Extension DefoggingExtension `xmlu:"Extension"`
 }
 
 type DefoggingExtension xsd.AnyType
@@ -334,6 +334,89 @@ type NoiseReduction struct {
 }
 
 type ImagingSettingsExtension204 xsd.AnyType
+
+type BacklightCompensationOptions20 struct {
+	Mode  []BacklightCompensationMode `xml:"tt:Mode" xmlu:"Mode"`
+	Level FloatRange                  `xml:"tt:Level" xmlu:"Level"`
+}
+
+type ExposureOptions20 struct {
+	Mode            []ExposureMode     `xml:"tt:Mode" xmlu:"Mode"`
+	Priority        []ExposurePriority `xml:"tt:Priority" xmlu:"Priority"`
+	MinExposureTime FloatRange         `xml:"tt:MinExposureTime" xmlu:"MinExposureTime"`
+	MaxExposureTime FloatRange         `xml:"tt:MaxExposureTime" xmlu:"MaxExposureTime"`
+	MinGain         FloatRange         `xml:"tt:MinGain" xmlu:"MinGain"`
+	MaxGain         FloatRange         `xml:"tt:MaxGain" xmlu:"MaxGain"`
+	MinIris         FloatRange         `xml:"tt:MinIris" xmlu:"MinIris"`
+	MaxIris         FloatRange         `xml:"tt:MaxIris" xmlu:"MaxIris"`
+	ExposureTime    FloatRange         `xml:"tt:ExposureTime" xmlu:"ExposureTime"`
+	Gain            FloatRange         `xml:"tt:Gain" xmlu:"Gain"`
+	Iris            FloatRange         `xml:"tt:Iris" xmlu:"Iris"`
+}
+
+type FocusOptions20 struct {
+	AutoFocusModes []AutoFocusMode `xml:"tt:AutoFocusModes" xmlu:"AutoFocusModes"`
+	DefaultSpeed   FloatRange      `xml:"tt:DefaultSpeed" xmlu:"DefaultSpeed"`
+	NearLimit      FloatRange      `xml:"tt:NearLimit" xmlu:"NearLimit"`
+	FarLimit       FloatRange      `xml:"tt:FarLimit" xmlu:"FarLimit"`
+}
+
+type WideDynamicRangeOptions20 struct {
+	Mode  []WideDynamicMode `xml:"tt:Mode" xmlu:"Mode"`
+	Level FloatRange        `xml:"tt:Level" xmlu:"Level"`
+}
+
+type WhiteBalanceOptions20 struct {
+	Mode   []WhiteBalanceMode `xml:"tt:Mode" xmlu:"Mode"`
+	YrGain FloatRange         `xml:"tt:YrGain" xmlu:"YrGain"`
+	YbGain FloatRange         `xml:"tt:YbGain" xmlu:"YbGain"`
+}
+
+type ImagingOptions20 struct {
+	BacklightCompensation *BacklightCompensationOptions20 `xml:"tt:BacklightCompensation" xmlu:"BacklightCompensation"`
+	Brightness            *FloatRange                     `xml:"tt:Brightness" xmlu:"Brightness"`
+	ColorSaturation       *FloatRange                     `xml:"tt:ColorSaturation" xmlu:"ColorSaturation"`
+	Contrast              *FloatRange                     `xml:"tt:Contrast" xmlu:"Contrast"`
+	Exposure              *ExposureOptions20              `xml:"tt:Exposure" xmlu:"Exposure"`
+	Focus                 *FocusOptions20                 `xml:"tt:Focus" xmlu:"Focus"`
+	IrCutFilterModes      []IrCutFilterMode               `xml:"tt:IrCutFilterModes" xmlu:"IrCutFilterModes"`
+	Sharpness             *FloatRange                     `xml:"tt:Sharpness" xmlu:"Sharpness"`
+	WideDynamicRange      *WideDynamicRangeOptions20      `xml:"tt:WideDynamicRange" xmlu:"WideDynamicRange"`
+	WhiteBalance          *WhiteBalanceOptions20          `xml:"tt:WhiteBalance" xmlu:"WhiteBalance"`
+	Extension             *ImagingOptions20Extension      `xml:"tt:Extension" xmlu:"Extension"`
+}
+
+type ImagingOptions20Extension xsd.AnyType
+
+type AbsoluteFocusOptions struct {
+	Position FloatRange `xml:"tt:Position" xmlu:"Position"`
+	Speed    FloatRange `xml:"tt:Speed" xmlu:"Speed"`
+}
+
+type RelativeFocusOptions20 struct {
+	Distance FloatRange `xml:"tt:Distance" xmlu:"Distance"`
+	Speed    FloatRange `xml:"tt:Speed" xmlu:"Speed"`
+}
+
+type ContinuousFocusOptions struct {
+	Speed FloatRange `xml:"tt:Speed" xmlu:"Speed"`
+}
+
+type MoveOptions20 struct {
+	Absolute   *AbsoluteFocusOptions   `xml:"tt:Absolute" xmlu:"Absolute"`
+	Relative   *RelativeFocusOptions20 `xml:"tt:Relative" xmlu:"Relative"`
+	Continuous *ContinuousFocusOptions `xml:"tt:Continuous" xmlu:"Continuous"`
+}
+
+type FocusStatus20 struct {
+	Position   float64    `xml:"tt:Position" xmlu:"Position"`
+	MoveStatus MoveStatus `xml:"tt:MoveStatus" xmlu:"MoveStatus"`
+}
+
+type ImagingStatus20 struct {
+	FocusStatus *FocusStatus20 `xml:"tt:FocusStatus" xmlu:"FocusStatus"`
+	Extension   xsd.AnyType    `xml:"tt:Extension" xmlu:"Extension"`
+}
 
 type VideoSourceExtension2 xsd.AnyType
 
@@ -798,7 +881,7 @@ type AudioSourceConfigurationOptions struct {
 type AudioSourceOptionsExtension xsd.AnyType
 
 type AudioEncoderConfigurationOptions struct {
-	Options AudioEncoderConfigurationOption
+	Options []AudioEncoderConfigurationOption
 }
 
 type AudioEncoderConfigurationOption struct {
