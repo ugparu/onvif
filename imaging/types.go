@@ -5,6 +5,17 @@ import (
 	"github.com/ugparu/onvif/xsd/onvif"
 )
 
+type Capabilities struct {
+	ImageStabilization xsd.Boolean `xml:"ImageStabilization,attr" xmlu:"ImageStabilization,attr"`
+	Presets            xsd.Boolean `xml:"Presets,attr" xmlu:"Presets,attr"`
+}
+
+type ImagingPreset struct {
+	Name  onvif.Name           `xmlu:"Name"`
+	Token onvif.ReferenceToken `xml:"token,attr" xmlu:"token,attr"`
+	Type  string               `xml:"type,attr" xmlu:"type,attr"`
+}
+
 type GetServiceCapabilities struct {
 	XMLName string `xml:"timg:GetServiceCapabilities"`
 }
@@ -61,4 +72,44 @@ type SetCurrentPreset struct {
 	XMLName          string               `xml:"timg:SetCurrentPreset"`
 	VideoSourceToken onvif.ReferenceToken `xml:"timg:VideoSourceToken"`
 	PresetToken      onvif.ReferenceToken `xml:"timg:PresetToken"`
+}
+
+type GetServiceCapabilitiesResponse struct {
+	Capabilities Capabilities `xmlu:"Capabilities"`
+}
+
+type GetImagingSettingsResponse struct {
+	ImagingSettings onvif.ImagingSettings20 `xmlu:"ImagingSettings"`
+}
+
+type SetImagingSettingsResponse struct {
+}
+
+type GetOptionsResponse struct {
+	ImagingOptions onvif.ImagingOptions20 `xmlu:"ImagingOptions"`
+}
+
+type MoveResponse struct {
+}
+
+type GetMoveOptionsResponse struct {
+	MoveOptions onvif.MoveOptions20 `xmlu:"MoveOptions"`
+}
+
+type StopResponse struct {
+}
+
+type GetStatusResponse struct {
+	Status onvif.ImagingStatus20 `xmlu:"Status"`
+}
+
+type GetPresetsResponse struct {
+	Preset []ImagingPreset `xmlu:"Preset"`
+}
+
+type GetCurrentPresetResponse struct {
+	Preset *ImagingPreset `xmlu:"Preset"`
+}
+
+type SetCurrentPresetResponse struct {
 }
